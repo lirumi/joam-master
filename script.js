@@ -23,3 +23,39 @@ var photoCount = 1;
  $(".portfolio-image").fadeIn(3000, "linear");
  }
  } 
+
+
+ $(".points>li").on("click", function(event){
+   		event.preventDefault();
+   		$(".points>li").removeClass("black");
+   		$(this).addClass("black");
+
+   		var index = $(".points>li").index($(this));
+   		var elm = $(".item:eq(" + index +")");
+
+   		$(".item").hide("slow");
+   		elm.show( "slow" );
+    		
+   })
+   
+   function makeCircle() {
+   		
+  		function slide() {
+
+  			var index = $(".points>li").index($(".black"));
+  			$(".points>li:eq(" + index +")").removeClass("black");
+  			$(".item:eq(" + index +")").hide("slow");
+
+     		if (index==5){
+     			index=-1;
+     		}
+
+     		$(".points>li:eq(" + (index+1) +")").addClass("black");
+			$(".item:eq(" + (index+1) +")").show("slow");	
+		}
+		
+		slide();
+		
+		
+	}
+	setInterval(makeCircle, 4000);

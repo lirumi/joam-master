@@ -184,8 +184,14 @@ section, #home {
 .face, .numbers, .twit, .hello, .moon{
 	text-align: center;
 }
-
-.face>img{
+.item {
+	width:100%;
+	display:none;
+}
+.active{
+	display:block;
+}
+.item>img{
 	width: auto;
 }
 .points {
